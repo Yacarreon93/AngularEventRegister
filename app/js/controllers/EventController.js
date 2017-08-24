@@ -4,11 +4,10 @@ eventsApp.controller('EventController', function ($scope, $log, eventData) {
 
   $scope.sortOrder = 'name'
 
-  $scope.event = eventData.getEvent()
-    .success(function (event) { $scope.event = event })
-    .error(function (data, status, headers, config) { 
-      $log.warn(data, status, headers(), config)  
-    })
+  eventData.getEvent()
+    .$promise
+    .then(function (event) { $scope.event = event })
+    .catch(function (response) { console.log(response) })
 
   $scope.upvoteSession = function (session) {
     session.upvoteCount++
