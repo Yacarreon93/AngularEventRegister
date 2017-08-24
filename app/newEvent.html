@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en" ng-app="eventsApp">
+
 <head>
   <title>Event Registration</title>
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/app.css" />
 </head>
+
 <body ng-cloak>
 
   <div class="container">
@@ -31,14 +33,16 @@
             <label for="eventName">Event Name:</label>
             <input id="eventName" type="text" required ng-model="event.name" placeholder="Name of your event..." />
             <label for="eventDate">Event Date:</label>
-            <input id="eventDate" type="text" required ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="event.date" placeholder="Format (mm/dd/yyyy)..." />
+            <input id="eventDate" type="text" required ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="event.date" placeholder="Format (mm/dd/yyyy)..."
+            />
             <label for="eventTime">Event Time:</label>
             <input id="eventTime" type="text" ng-model="event.time" placeholder="Time of your event..." />
             <label for="eventLocation">Event Location:</label>
             <input id="eventLocation" type="text" ng-model="event.location.address" placeholder="Address of your event..." />
             <br/>
             <input id="eventCity" type="text" ng-model="event.location.city" class="input-small" placeholder="City..." />
-            <input id="eventProvince" type="text" ng-model="event.location.providence" class="input-small" placeholder="Providence..." />
+            <input id="eventProvince" type="text" ng-model="event.location.providence" class="input-small" placeholder="Providence..."
+            />
             <br/>
             <label for="eventImageUrl">Image:</label>
             <input id="eventImageUrl" type="url" ng-model="event.imageUrl" class="input-xlarge" placeholder="Url of image..." />
@@ -66,4 +70,5 @@
   <script src="/js/controller/EventController.js"></script>
 
 </body>
+
 </html>

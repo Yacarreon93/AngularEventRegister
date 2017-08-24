@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en" ng-app="eventsApp">
+
 <head>
   <title>Event Registration</title>
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/app.css" />
 </head>
+
 <body ng-cloak>
 
   <div class="container">
@@ -22,7 +24,7 @@
           <!-- <h2 ng-style="myStyle" ng-bind-template="{{event.name}}"></h2> -->
           <h2 ng-class="myClass" ng-bind-template="{{event.name | uppercase}}"></h2>
         </div>
-      </div>      
+      </div>
 
       <div class="row">
         <div class="span3">
@@ -31,9 +33,8 @@
         </div>
         <div class="span4">
           <address>
-            <strong>Address:</strong><br/>
-            {{event.location.address}}<br/>
-            {{event.location.city}}, {{event.location.province}}
+            <strong>Address:</strong><br/> {{event.location.address}}
+            <br/> {{event.location.city}}, {{event.location.province}}
           </address>
         </div>
       </div>
@@ -43,8 +44,7 @@
       <select ng-model="sortOrder" class="input-small">
         <option selected value="name">Name</option>
         <option selected value="-upvoteCount">Votes</option>        
-      </select>
-      Show:
+      </select> Show:
       <select ng-model="query.level" class="input-medium">
         <option selected value="">All</option>
         <option value="introductory">Introductory</option>        
@@ -52,7 +52,7 @@
         <option value="advanced">Advanced</option>        
       </select>
       <ul class="thumbnails">
-        <li ng-repeat="session in event.sessions | orderBy:sortOrder | filter:query | limitTo:2">          
+        <li ng-repeat="session in event.sessions | orderBy:sortOrder | filter:query | limitTo:2">
           <div class="row session">
             <div class="span0 well votingWidget">
               <div class="votingButton" ng-click="upvoteSession(session)">
@@ -86,4 +86,5 @@
   <script src="/js/controllers/EventController.js"></script>
 
 </body>
+
 </html>
