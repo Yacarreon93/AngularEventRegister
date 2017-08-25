@@ -1,6 +1,18 @@
 'use strict';
 
-var eventsApp = angular.module('eventsApp', ['ngSanitize', 'ngResource', 'ngCookies'])
-  .factory('myCache', function ($cacheFactory) {
-    return $cacheFactory('myCache', { capacity: 3 })
+var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/newEvent', {
+        templateUrl: 'templates/newEvent.html',
+        controller: 'EditEventController'
+      })
+      .when('/events', {
+        templateUrl: 'templates/eventList.html',
+        controller: 'EventListController'
+      })
+      .when('/event/:eventId', {
+        templateUrl: 'templates/eventDetails.html',
+        controller: 'EventController'
+      })
   })

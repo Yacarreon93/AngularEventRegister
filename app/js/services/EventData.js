@@ -8,6 +8,9 @@ eventsApp.factory('eventData', function ($resource) {
     getEvent: function () {
       return resource.get({ id: 1 })
     },
+    getAllEvents: function () {
+      return resource.query()
+    },
     save: function (event) {
       event.id = 999
       return resource.save(event)
