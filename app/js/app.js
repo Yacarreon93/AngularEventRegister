@@ -12,6 +12,7 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
         controller: 'EventListController'
       })
       .when('/event/:eventId', {
+        foo: 'bar',
         templateUrl: 'templates/eventDetails.html',
         controller: 'EventController'
       })
