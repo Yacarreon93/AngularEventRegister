@@ -15,4 +15,5 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
         templateUrl: 'templates/eventDetails.html',
         controller: 'EventController'
       })
+      .otherwise({ redirectTo: '/events' })
   })
